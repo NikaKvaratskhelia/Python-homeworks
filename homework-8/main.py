@@ -17,17 +17,14 @@ print("Symmetric Difference:", symmetric_diff)
 
 # davaleba 2
 
-student = { 
-  "name": "Ana", 
-  "age": 20, 
-  "contacts": { 
-      "email": "ana@example.com", 
-      "phone": "599123456" 
+student = {
+    "name": "Ana",
+    "age": 20,
+    "contacts": {"email": "ana@example.com", "phone": "599123456"},
+    "courses": {
+        "python": {"score": 95, "passed": True},
+        "web": {"score": 58, "passed": False},
     },
-  "courses": {
-      "python": {"score": 95, "passed": True},
-      "web": {"score": 58, "passed": False} 
-    } 
 }
 
 
@@ -37,6 +34,18 @@ print(student["courses"]["python"]["score"])
 student["courses"]["web"]["passed"] = True
 student["courses"]["web"]["score"] = 65
 
-del(student["contacts"]["phone"])
+del student["contacts"]["phone"]
 
 print(student)
+
+# davaleba 3
+
+words = ["apple", "banana", "apple", "cherry", "banana", "apple", "orange"]
+
+word_counts = dict()
+
+for w in words:
+    word_counts[w] = word_counts.get(w, 0) + 1
+
+print("Final Word Counts:")
+print(word_counts)
